@@ -1,0 +1,65 @@
+<div class="card mt-5 py-5">
+  <div class="card-body">
+    <h2 class="card-title text-center mb-5">
+      Crear una nueva Cita
+    </h2>
+    <form ngNativeValidate [formGroup]="form" #f="ngForm" (ngSubmit)="save(f)">
+      <div class="form-group row">
+        <label class="col-sm-4 col-lg-2 col-form-label">Nombre</label>
+        <div class="col-sm-8 col-lg-10">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Nombre Macota" 
+            name="nombre"
+            formControlName="nombre"
+            required/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-4 col-lg-2 col-form-label">Dueño</label>
+        <div class="col-sm-8 col-lg-10">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Nombre del Dueño" 
+            name="dueno"
+            formControlName="dueno"
+            required/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-4 col-lg-2 col-form-label">Fecha</label>
+        <div class="col-sm-8 col-lg-4">
+          <input 
+            type="date" 
+            class="form-control" 
+            name="fecha"
+            formControlName="fecha"
+            required/>
+        </div>
+        <label class="col-sm-4 col-lg-2 col-form-label">Hora</label>
+        <div class="col-sm-8 col-lg-4">
+          <input 
+            type="time" 
+            class="form-control" 
+            name="hora"
+            formControlName="hora"
+            required/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-4 col-lg-2 col-form-label">Síntomas</label>
+        <div class="col-sm-8 col-lg-10">
+          <textarea 
+            class="form-control" 
+            placeholder="Describe los síntomas" 
+            name="sintomas"
+            formControlName="sintomas"
+            required></textarea>
+        </div>
+      </div>
+      <input type="submit" class="btn btn-primary py-3 mt-2 btn-block" value="Agregar Nueva Cita" />
+    </form>
+  </div>
+</div>

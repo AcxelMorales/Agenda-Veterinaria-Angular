@@ -1,0 +1,21 @@
+<div class="card mt-2 py-5">
+  <div class="card-body">
+    <h2 class="card-title text-center" *ngIf="citas.length > 0">Citas Actuales</h2>
+    <h2 class="card-title text-center" *ngIf="citas.length === 0">No hay Citas</h2>
+    <div class="lista-citas">
+
+      <div class="media mt-3" *ngFor="let i of citas; let idx = index">
+        <div class="media-body">
+          <h3 class="mt-0">{{ i.nombre }}</h3>
+          <p class="card-text"><span>Nombre del Dueño: </span>{{ i.dueno }}</p>
+          <p class="card-text"><span>Fecha: </span>{{ i.fecha }}</p>
+          <p class="card-text"><span>Hora: </span>{{ i.hora }}</p>
+          <p class="card-text"><span>Sintomas</span> </p>
+          <p class="card-text">{{ i.sintomas }}</p>
+          <button class="btn btn-danger" (click)="delete(idx)">Eliminar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
